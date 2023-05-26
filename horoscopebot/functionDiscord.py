@@ -37,6 +37,6 @@ async def on_ready():
         print(f"Got channel : {channel}")
         job_loop.start(channel)
 
-    print('Ready')
+    print('Ready to bot')
 
 bot.run(TOKEN)
