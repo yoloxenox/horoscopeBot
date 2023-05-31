@@ -27,11 +27,17 @@ def functionGorafi():
     r = requests.get(request)
 
     if r.status_code == 200:
-        for item in reList:
-            reg = f'{ item } :.*'
-            txtToClean = re.findall(reg, r.text)
-            txtCleaned = cleaner(clean, txtToClean)
-            messageList.append(txtCleaned)
-            message = "\n".join(messageList)
+        try: 
+            for item in reList:
+                reg = f'{ item } :.*'
+                txtToClean = re.findall(reg, r.text)
+                txtCleaned = cleaner(clean, txtToClean)
+                messageList.append(txtCleaned)
+                message = "\n".join(messageList)
+        except IndexError: 
+            message = f'Désolé, la requête : { request } a échouée'
+        except:
+            message = "Désolé quelque chose s'est mal passé"
     return message
-            
+
+        
