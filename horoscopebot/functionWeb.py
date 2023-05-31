@@ -20,7 +20,8 @@ def functionGorafi():
     m = mD.strftime('%m')
     M = mD.strftime("%B")
     messageList = []
-    message = ""
+    message = txtToClean = txtCleaned = ""
+    txtToClean = ""
 
     request = f'https://www.legorafi.fr/{ mD.year }/{ m }/{ mD.day }/horoscope-du-{ mD.day }-{ M }-{ mD.year }/'
     r = requests.get(request)
@@ -30,7 +31,6 @@ def functionGorafi():
             reg = f'{ item } :.*'
             txtToClean = re.findall(reg, r.text)
             txtCleaned = cleaner(clean, txtToClean)
-            txtCleaned
             messageList.append(txtCleaned)
             message = "\n".join(messageList)
     return message
