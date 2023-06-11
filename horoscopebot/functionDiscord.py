@@ -21,7 +21,7 @@ async def horoscope(ctx):
     await ctx.send(response)
 
 # creating a loop that runs every day at 3 PM UTC
-@tasks.loop(time=datetime.time(hour=12, minute=3))
+@tasks.loop(time=datetime.time(hour=9, minute=3))
 async def job_loop(channel: discord.TextChannel):
     weekday = datetime.datetime.utcnow().weekday()
     if weekday == 3:    # sunday
