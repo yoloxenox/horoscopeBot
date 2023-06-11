@@ -33,7 +33,7 @@ async def job_loop(channel: discord.TextChannel):
 async def on_ready():
 
     if not job_loop.is_running():
-        channel = bot.get_channel(670755529110323222)
+        channel = bot.get_channel(433156823189684224)
         print(f"Got channel : {channel}")
         job_loop.start(channel)
 
