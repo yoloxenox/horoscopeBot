@@ -13,7 +13,7 @@ def functionGorafi():
     locale.setlocale(locale.LC_ALL,'fr_FR.utf8')
 
     reList = ["Poissons", "Sagittaire", "Verseau", "Furet", "Capricorne"]
-    clean = ["</strong>", "</p>", "/>"]
+    clean = ["</strong>", "</p>", "/>", "&nbsp;"]
     request = ""
 
     mD = ft.getUrl()
