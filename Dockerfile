@@ -13,5 +13,5 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 COPY ./horoscopebot /horoscopebot
 WORKDIR /horoscopebot
-RUN pip install -r requirements.txt
+RUN python3 -m pip install -r requirements.txt
 EXPOSE 8443
