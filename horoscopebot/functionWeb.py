@@ -12,7 +12,7 @@ def cleaner(clean, txt):
 def functionGorafi():
     locale.setlocale(locale.LC_ALL,'fr_FR.utf8')
 
-    reList = ["Poissons", "Sagittaire", "Verseau", "Furet", "Capricorne"]
+    reList = ["Poissons", "Sagittaire", "Verseau", "Furet", "Capricorne", "Bélier"]
     clean = ["</strong>", "</p>", "/>", "&nbsp;"]
     request = ""
 
