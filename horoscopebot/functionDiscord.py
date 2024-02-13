@@ -21,7 +21,7 @@ async def horoscope(ctx):
     await ctx.send(response)
 
 # creating a loop that runs every day at 9:03 AM UTC
-@tasks.loop(hour=1.0)
+@tasks.loop(hours=1.0)
 async def job_loop(channel: discord.TextChannel):
 
     if fW.isChksumDifferent is False:
