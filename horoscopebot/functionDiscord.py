@@ -20,14 +20,17 @@ async def horoscope(ctx):
     response = fW.functionGorafi()
     await ctx.send(response)
 
-# creating a loop that runs every day at 3 PM UTC
-@tasks.loop(time=datetime.time(hour=9, minute=3))
+# creating a loop that runs every day at 9:03 AM UTC
+@tasks.loop(hour=1.0)
 async def job_loop(channel: discord.TextChannel):
-    weekday = datetime.datetime.utcnow().weekday()
-    if weekday == 3:    # sunday
+
+    if fW.isChksumDifferent is False:
         # do your job here
         message = fW.functionGorafi()
         await channel.send(message)
+        fW.webScrapeGorafichksm
+    else:
+        fW.webScrapeGorafichksm()
 
 @bot.event
 async def on_ready():

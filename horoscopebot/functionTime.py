@@ -1,6 +1,6 @@
 import datetime
 
-def getUrl():
+def getDate():
     today = datetime.date.today()
-    mondayDate = today - datetime.timedelta(days=today.weekday())
-    return mondayDate
+    Date = today - datetime.timedelta(days=today.weekday())
+    return Date
