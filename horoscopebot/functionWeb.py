@@ -69,7 +69,7 @@ def RequestLoader():
     newRequest = newRequest.replace("é","e")
     f = open("url.txt", "r")
     oldRequest = f.read()
-    if newRequest ==  oldRequest:
+    if newRequest != oldRequest:
         request = oldRequest
         return request
     else:
