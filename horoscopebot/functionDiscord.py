@@ -18,6 +18,7 @@ bot = commands.Bot(intents=intents, command_prefix='!')
 async def horoscope(ctx):
 
     response = fW.functionGorafi()
+    print(response)
     await ctx.send(response)
 
 # creating a loop that runs every day at 9:03 AM UTC

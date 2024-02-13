@@ -7,7 +7,6 @@ import functionTime as ftt
 import functionText as fte
 
 def functionGorafi():
-    locale.setlocale(locale.LC_ALL,'fr_FR.utf8')
 
     reList = ["Poissons", "Sagittaire", "Verseau", "Furet", "Capricorne", "Bélier"]
     clean = ["</strong>", "</p>", "/>", "&nbsp;"]
@@ -27,13 +26,13 @@ def functionGorafi():
                 txtCleaned = fte.cleaner(clean, txtToClean)
                 messageList.append(txtCleaned)
                 message = "\n".join(messageList)
-                with open('url.txt', 'w') as f:
-                    f.write(request)
         except IndexError: 
-            message = f'Désolé, la requête : {r} a échouée'
+            message = f'Désolé, la requête : {request} a échouée'
         except:
             message = "Désolé quelque chose s'est mal passé"
     return message
+    with open('url.txt', 'w') as f:
+        f.write(request)
 
 def webScrapeGoraficlean():
     txtToClean = txtCleaned = ""
@@ -62,10 +61,12 @@ def isChksumDifferent():
         return True
     
 def RequestLoader():
+    locale.setlocale(locale.LC_ALL, 'fr_FR.UTF-8')
     Date = ftt.getDate()
     m = Date.strftime('%m')
     M = Date.strftime("%B")
     newRequest = f'https://www.legorafi.fr/{ Date.year }/{ m }/{ Date.day }/horoscope-du-{ Date.day }-{ M }-{ Date.year }/'
+    newRequest = newRequest.replace("é","e")
     f = open("url.txt", "r")
     oldRequest = f.read()
     if newRequest ==  oldRequest:

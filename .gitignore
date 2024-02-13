@@ -1,1 +1,3 @@
 /horoscopebot/.env
+/horoscopebot/env/
+/horoscopebot/__pycache__/
