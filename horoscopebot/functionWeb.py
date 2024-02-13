@@ -43,7 +43,6 @@ def webScrapeGoraficlean():
     pattern = "if\(is_iframe\){iframe_count\+=1}}}\).*$"
     reg = f'{pattern}'
     txtToClean = re.findall(reg, r.text)
-    print(reg, txtToClean)
     txtCleaned = fte.cleaner(txtToClean, r.text)
     return txtCleaned
 
