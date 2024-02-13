@@ -49,14 +49,14 @@ def webScrapeGoraficlean():
 
 def webScrapeGorafichksm():
 
-    checksum = hashlib.sha256(webScrapeGoraficlean.encode('utf-8')).hexdigest()
+    checksum = hashlib.sha256(webScrapeGoraficlean().encode('utf-8')).hexdigest()
     with open('chksmGorafi.txt', 'w') as f:
         f.write(checksum)
 
 def isChksumDifferent():
     f = open("chksmGorafi.txt", "r")
     oldChecksum = f.read()
-    newChecksum = hashlib.sha256(webScrapeGoraficlean.encode('utf-8')).hexdigest()
+    newChecksum = hashlib.sha256(webScrapeGoraficlean().encode('utf-8')).hexdigest()
     if oldChecksum == newChecksum:
         return False
     else :
